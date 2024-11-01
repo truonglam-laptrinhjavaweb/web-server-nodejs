@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bare - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container mt-3">
+            <h2>Test API Form</h2>
+            <form action="#">
+              <div class="mb-3 mt-3">
+                <label for="email">Input 1:</label>
+                <input type="text" class="form-control" id="input1" placeholder="Enter input 1" name="input1">
+              </div>
+              <div class="mb-3">
+                <label for="pwd">Input 2:</label>
+                <input type="text" class="form-control" id="input2" placeholder="Enter input 2" name="input2">
+              </div>         
+              <button type="button" class="btn btn-primary" id="btnTestAPI">Submit</button>
+            </form>
+        </div>
+
+        <!-- Jquery -->
+        <script type='text/javascript' src='js/jquery-2-1-4.min.js'></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                console.log('init data');
+            });
+            $('#btnTestAPI').click(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '{url}',
+                    type: 'GET',
+                    dataType: 'json',
+                    //contentType: 'application/json',
+                    //data: JSON.stringify(data),
+                    success: function (res) {
+                        console.log('success');
+                    },
+                    error: function (res) {
+                        console.log('success');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
